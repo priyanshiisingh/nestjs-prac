@@ -9,9 +9,32 @@ export class UsersService {
       id: 0,
       name: 'Prii',
     },
+    {
+      id: 1,
+      name: 'abcd',
+    },
+    {
+      id: 2,
+      name: 'efgh',
+    },
+    {
+      id: 3,
+      name: 'ijklmno',
+    },
+    {
+      id: 4,
+      name: 'pqrst',
+    },
+    {
+      id: 5,
+      name: 'Prii',
+    },
   ];
 
-  findAll(): User[] {
+  findAll(name?: string): User[] {
+    if (name) {
+      return this.users.filter((user) => user.name === name);
+    }
     return this.users;
   }
 
